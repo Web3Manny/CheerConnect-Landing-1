@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CheerConnect — Become the Program Parents Brag About</title>
+<meta name="description" content="60 seconds after practice. Voice note → professional parent progress report. Video drills attached automatically. Built for cheer coaches and gym owners.">
+<meta property="og:title" content="CheerConnect — Become the Program Parents Brag About">
+<meta property="og:description" content="60 seconds after practice. Voice note → professional parent progress report with drill videos attached. Built by a coach, for coaches.">
+<meta property="og:url" content="https://cheerconnect.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CheerConnect — Become the Program Parents Brag About">
+<meta name="twitter:description" content="60 seconds after practice. Voice note → professional parent progress report. Built for cheer coaches and gym owners.">
+<link rel="canonical" href="https://cheerconnect.app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --plum: #4A1942;
+  --plum-light: #6B2D5B;
+  --plum-deep: #2A0E28;
+  --gold: #D4A843;
+  --gold-light: #E8C96A;
+  --cream: #FDF8F0;
+  --warm-white: #FFFDF9;
+  --charcoal: #1A1A2E;
+  --text: #2D2D3A;
+  --text-light: #6B6B7B;
+  --green: #22c55e;
+  --green-soft: rgba(34,197,94,0.06);
+  --green-border: rgba(34,197,94,0.15);
+  --gold-glow: rgba(212, 168, 67, 0.12);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  background: var(--warm-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+.wrapper { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Typography ── */
+.body-text { font-size: 1.08rem; line-height: 1.85; color: var(--text-light); margin-bottom: 20px; }
+.body-text strong { color: var(--text); font-weight: 700; }
+.body-text em { font-style: italic; }
+.section-heading { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--charcoal); line-height: 1.25; margin: 64px 0 24px; }
+.section-heading em { font-style: italic; color: var(--plum); }
+.divider { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 56px 0; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 40px; border-radius: 60px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 1.05rem;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
+}
+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--charcoal); box-shadow: 0 4px 24px rgba(212, 168, 67, 0.35); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(212, 168, 67, 0.5); }
+.btn-plum { background: linear-gradient(135deg, var(--plum), var(--plum-light)); color: #fff; box-shadow: 0 4px 24px rgba(74, 25, 66, 0.3); }
+.btn-plum:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(74, 25, 66, 0.4); }
+.cta-block { text-align: center; margin: 48px 0; }
+.cta-sub { font-size: 0.88rem; color: var(--text-light); margin-top: 12px; }
+
+/* ── Nav ── */
+.nav-bar { display: flex; align-items: center; justify-content: space-between; max-width: 680px; margin: 0 auto; padding: 20px 24px; }
+.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--plum); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.nav-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--plum), var(--plum-light)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.9rem; }
+.nav-cta { font-size: 0.88rem; font-weight: 700; color: var(--plum); text-decoration: none; padding: 10px 24px; border: 2px solid var(--plum); border-radius: 40px; transition: all 0.2s; }
+.nav-cta:hover { background: var(--plum); color: #fff; }
+
+/* ── Hero ── */
+.hero-section { padding: 60px 0 40px; text-align: center; }
+.hero-eyebrow { display: inline-block; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+.hero-section h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--charcoal); margin-bottom: 24px; }
+.hero-section h1 em { font-style: italic; color: var(--plum); }
+.hero-section .hero-sub { font-size: 1.12rem; line-height: 1.75; color: var(--text-light); max-width: 580px; margin: 0 auto; }
+
+/* ── Callout ── */
+.callout { background: var(--cream); border-left: 4px solid var(--gold); padding: 24px 28px; border-radius: 0 14px 14px 0; margin: 32px 0; font-size: 1.05rem; font-weight: 600; color: var(--text); line-height: 1.7; }
+
+/* ── Comparison Box ── */
+.compare-box { background: var(--cream); border-radius: 16px; padding: 32px; margin: 32px 0; }
+.compare-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--charcoal); margin-bottom: 16px; }
+.compare-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.92rem; }
+.compare-row:last-child { border-bottom: none; }
+.compare-label { color: var(--text-light); }
+.compare-value { font-weight: 700; color: var(--text); }
+.compare-value.bad { color: #c44; }
+.compare-value.good { color: var(--green); }
+
+/* ── How It Works ── */
+.how-step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px; }
+.how-step-num { width: 40px; height: 40px; min-width: 40px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--plum); margin-top: 2px; }
+.how-step-text h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1rem; color: var(--charcoal); margin-bottom: 4px; }
+.how-step-text p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
+
+/* ── Email Demo ── */
+.email-demo { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 32px; margin: 40px 0; box-shadow: 0 4px 24px rgba(0,0,0,0.04); font-size: 0.92rem; line-height: 1.7; }
+.email-demo-label { font-weight: 700; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.email-demo .greeting { font-weight: 700; margin-bottom: 12px; font-size: 1rem; color: var(--charcoal); }
+.email-demo .e-section { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(0,0,0,0.05); }
+.email-demo .e-section-title { font-weight: 700; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--plum); margin-bottom: 8px; }
+.email-demo .e-drill { margin-bottom: 6px; }
+.email-demo .e-drill strong { color: var(--text); }
+.email-demo .e-meta { font-size: 0.82rem; color: var(--text-light); margin-bottom: 10px; }
+.email-demo .e-sig { font-size: 0.85rem; color: var(--text-light); margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(0,0,0,0.05); }
+.email-demo .e-booking { margin-top: 14px; padding: 12px 16px; background: var(--cream); border-radius: 10px; font-size: 0.85rem; }
+.email-demo .e-booking a { color: var(--plum); font-weight: 700; text-decoration: none; }
+
+/* ── Benefit Blocks ── */
+.benefit-block { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+.benefit-icon { font-size: 1.4rem; margin-top: 4px; flex-shrink: 0; }
+.benefit-text h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.98rem; color: var(--charcoal); margin-bottom: 4px; }
+.benefit-text p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
+
+/* ── Pricing ── */
+.pricing-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 32px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.03); transition: transform 0.3s; position: relative; }
+.pricing-card:hover { transform: translateY(-3px); }
+.pricing-card.featured { border: 2px solid var(--gold); box-shadow: 0 8px 36px rgba(212, 168, 67, 0.12); }
+.pricing-badge { position: absolute; top: -12px; left: 24px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--charcoal); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; }
+.pricing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.pricing-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.05rem; color: var(--charcoal); }
+.pricing-price { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--plum); }
+.pricing-price span { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--text-light); }
+.pricing-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 16px; }
+.pricing-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.pricing-list li { font-size: 0.88rem; color: var(--text); line-height: 1.4; padding-left: 24px; position: relative; }
+.pricing-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.pricing-list li strong { font-weight: 700; }
+.pricing-card .btn { width: 100%; justify-content: center; padding: 14px 32px; font-size: 0.95rem; }
+
+/* ── Add-on ── */
+.addon-box { background: var(--cream); border-radius: 14px; padding: 24px 28px; margin: 24px 0; display: flex; align-items: flex-start; gap: 16px; }
+.addon-icon { font-size: 1.6rem; margin-top: 2px; }
+.addon-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--charcoal); margin-bottom: 4px; }
+.addon-box p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+.addon-price { font-weight: 800; color: var(--plum); }
+
+/* ── Founding 10 ── */
+.founding-section { background: var(--charcoal); color: #fff; border-radius: 20px; padding: 48px 40px; margin: 64px 0; position: relative; overflow: hidden; }
+.founding-section::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 168, 67, 0.1) 0%, transparent 70%); }
+.founding-section h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 16px; position: relative; z-index: 1; }
+.founding-section h2 em { font-style: italic; color: var(--gold-light); }
+.founding-body { color: rgba(255,255,255,0.7); font-size: 1.02rem; line-height: 1.8; margin-bottom: 20px; position: relative; z-index: 1; }
+.founding-body strong { color: #fff; }
+.founding-list { list-style: none; margin: 24px 0 32px; display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
+.founding-list li { font-size: 0.92rem; color: rgba(255,255,255,0.8); line-height: 1.4; padding-left: 28px; position: relative; }
+.founding-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; font-size: 0.8rem; }
+.founding-list li strong { color: #fff; }
+.founding-price { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--gold-light); margin-bottom: 8px; position: relative; z-index: 1; }
+.founding-compared { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 24px; position: relative; z-index: 1; }
+.founding-compared s { opacity: 0.6; }
+.founding-section .btn { position: relative; z-index: 1; }
+
+/* ── Guarantee ── */
+.guarantee-box { display: flex; align-items: flex-start; gap: 16px; padding: 28px; background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 14px; margin: 40px 0; }
+.guarantee-box .g-icon { font-size: 1.6rem; flex-shrink: 0; }
+.guarantee-box h4 { font-weight: 700; font-size: 0.95rem; color: var(--green); margin-bottom: 6px; }
+.guarantee-box p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.06); padding: 24px 0; }
+.faq-item:first-child { border-top: 1px solid rgba(0,0,0,0.06); }
+.faq-q { font-weight: 700; font-size: 0.98rem; color: var(--charcoal); margin-bottom: 8px; }
+.faq-a { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+
+/* ── Early Access ── */
+.early-access-tag { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--charcoal); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 8px; }
+.pricing-future { font-size: 0.82rem; color: var(--text-light); margin-top: 6px; margin-bottom: 16px; }
+.pricing-future s { opacity: 0.6; }
+.pricing-future strong { color: var(--plum); }
+.urgency-bar { background: var(--cream); border: 1px solid rgba(212,168,67,0.3); border-radius: 14px; padding: 20px 24px; margin-bottom: 32px; }
+.urgency-bar h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 0.88rem; color: var(--charcoal); margin-bottom: 14px; text-align: center; }
+.urgency-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 12px; flex-wrap: wrap; }
+.urgency-row:last-child { margin-bottom: 0; }
+.urgency-label { font-size: 0.82rem; font-weight: 700; color: var(--text); min-width: 80px; }
+.urgency-track { flex: 1; height: 8px; background: rgba(0,0,0,0.07); border-radius: 4px; overflow: hidden; min-width: 100px; }
+.urgency-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.urgency-count { font-size: 0.82rem; font-weight: 700; color: var(--plum); min-width: 80px; text-align: right; }
+
+/* ── Footer ── */
+.footer { margin-top: 64px; padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.06); text-align: center; }
+.footer p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; }
+.footer a { color: var(--plum); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav-bar">
+  <a href="/" class="nav-logo"><div class="nav-logo-icon">✦</div> Cheer Connect</a>
+  <a href="https://app.cheerconnect.app" class="nav-cta">Start Free →</a>
+</nav>
+
+<!-- ════════════════════════════ -->
+<!-- 1. HERO                      -->
+<!-- ════════════════════════════ -->
+<section class="hero-section">
+  <div class="wrapper">
+    <div class="hero-eyebrow">For Gym Owners, Program Directors & Coaches</div>
+    <h1>Become the Program Parents <em>Brag About</em> to Other Parents.</h1>
+    <p class="hero-sub">60 seconds after practice. That's all it takes to give every family the kind of update they've never received from any sport, any activity, any program their kid has ever been in. Send your first report today.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════ -->
+<!-- 2. THE STATUS GAP            -->
+<!-- ════════════════════════════ -->
+<section class="wrapper">
+  <div class="divider"></div>
+
+  <p class="body-text">Cheer is competitive. Not just on the mat. In the lobby.</p>
+
+  <p class="body-text">Every gym believes their progressions are better than the gym down the street. And honestly? They might be right. But parents can't tell the difference between good coaching and great coaching by watching from behind the glass.</p>
+
+  <p class="body-text">But they <strong>can</strong> tell the difference between a program that communicates and one that doesn't.</p>
+
+  <p class="body-text">The gym that sends detailed progress updates after practice? The one where parents know exactly what their child worked on, what they need to improve, and what to practice at home?</p>
+
+  <p class="body-text"><strong>That's the gym parents recommend.</strong></p>
+
+  <p class="body-text">Not because the coaching is necessarily better. (Maybe it is). But because the parents <em>feel</em> like it is. And in this business, perception is retention.</p>
+
+  <div class="callout">Even winning programs lose kids every year. Trophies don't keep families. Connection does.</div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 3. THE COST OF DOING IT     -->
+  <!--    MANUALLY                 -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">You Already Know You Should Be <em>Doing This</em></h2>
+
+  <p class="body-text">So why aren't you?</p>
+
+  <p class="body-text">Because doing it properly is brutal. Let's be honest about what it would actually take.</p>
+
+  <p class="body-text">Say you have 5 coaches, each working with 8 athletes per class. Standard ratio. That's 40 individual parent updates. Even if each one only took 10 minutes to write (and realistically it takes longer on a phone), that's <strong>over 6 hours of writing per day.</strong> Every day. After practice. When your coaches are already exhausted and heading into their next class.</p>
+
+  <p class="body-text">No gym on earth is doing that.</p>
+
+  <div class="compare-box">
+    <h4>The Real Cost of "Just Write Reports"</h4>
+    <div class="compare-row"><span class="compare-label">10 min per report × 40 athletes</span><span class="compare-value bad">6+ hours/day</span></div>
+    <div class="compare-row"><span class="compare-label">At $20/hr coach pay</span><span class="compare-value bad">$120+/day in labor</span></div>
+    <div class="compare-row"><span class="compare-label">Monthly cost</span><span class="compare-value bad">$2,400+/month</span></div>
+    <div class="compare-row"><span class="compare-label">Will your coaches actually do it?</span><span class="compare-value bad">No.</span></div>
+  </div>
+
+  <p class="body-text">"Okay, what about ChatGPT?"</p>
+
+  <p class="body-text">Sure. Your coach could open ChatGPT, type what happened in the session, copy the output, paste it into an email, manually add the parent's name, manually find a drill video, attach it, format everything, and hit send. <strong>Per athlete. Per session.</strong></p>
+
+  <p class="body-text">That's not a system. That's a chore. And chores don't get done when you're running back-to-back classes.</p>
+
+  <p class="body-text">"What about building our own tool?"</p>
+
+  <p class="body-text">A custom app with voice transcription, AI report generation, athlete databases, video libraries, and email delivery? You're looking at $30,000-$50,000 in development and 6-12 months of building. And then you have to maintain it.</p>
+
+  <div class="compare-box">
+    <h4>CheerConnect</h4>
+    <div class="compare-row"><span class="compare-label">Time per report</span><span class="compare-value good">60 seconds</span></div>
+    <div class="compare-row"><span class="compare-label">Typing required</span><span class="compare-value good">None</span></div>
+    <div class="compare-row"><span class="compare-label">Drill videos attached</span><span class="compare-value good">Automatically</span></div>
+    <div class="compare-row"><span class="compare-label">Cost</span><span class="compare-value good">$99/month</span></div>
+    <div class="compare-row"><span class="compare-label">Will your coaches actually do it?</span><span class="compare-value good">Yes. They just talk.</span></div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 4. WHY CHEERCONNECT EXISTS  -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">I Built the Tool <em>I Wished I Had</em> for 15 Years</h2>
+
+  <p class="body-text">I'm Manny. I've been coaching cheer and tumbling for 15 years. I've managed gyms with hundreds of students and a dozen-plus coaches. I've been a husband, a father, and a guy working multiple jobs to make it all work.</p>
+
+  <p class="body-text">And here's what kept eating at me: <strong>I knew what my athletes needed.</strong> I could see the corrections. I could see the progress. I had the drills and workouts that would unlock their next skill.</p>
+
+  <p class="body-text">But by the time I got home, made dinner, helped with homework, and crashed... there was no time left to put any of that into a message for every parent.</p>
+
+  <p class="body-text">So I'd fire off a quick text. <em>"Great practice today!"</em></p>
+
+  <p class="body-text">And I'd feel it in my gut. <strong>That's not good enough.</strong></p>
+
+  <p class="body-text">As a manager, I saw it across my entire staff. Not every coach felt comfortable or competent talking to parents. Not because they didn't care. Because they were young. Or shy. Or inexperienced. Or actually scared of the parent.</p>
+
+  <p class="body-text">So I built CheerConnect. Not to replace the coach. Not to prevent coaches and staff from talking to parents in person. It's designed to <strong>enhance it.</strong> To remove the barrier between caring and communicating.</p>
+
+  <p class="body-text">I built it for myself first. To deliver a higher level of service to my own clients. Because they deserve it. Because it's what I wished I had when I was learning.</p>
+
+  <!-- ════════════════════════════ -->
+  <!-- 5. HOW IT WORKS             -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">Here's How It Works. <em>It's Almost Too Simple.</em></h2>
+
+  <div class="how-step">
+    <div class="how-step-num">1</div>
+    <div class="how-step-text">
+      <h4>Coach finishes practice. Hits record.</h4>
+      <p>They talk for 60 seconds the way they'd tell another coach what happened. "Briella nailed her back handspring, she needs to work on blocking through her shoulders, I want her doing wall handstands and shoulder shrugs at home this week."</p>
+    </div>
+  </div>
+  <div class="how-step">
+    <div class="how-step-num">2</div>
+    <div class="how-step-text">
+      <h4>CheerConnect transforms it.</h4>
+      <p>AI turns that voice note into a professional progress report. Wins, corrections explained in parent-friendly language, a structured at-home workout plan with sets, reps, and coaching tips. Drill videos from your library get attached automatically. It sounds like the coach wrote it. Not a robot.</p>
+    </div>
+  </div>
+  <div class="how-step">
+    <div class="how-step-num">3</div>
+    <div class="how-step-text">
+      <h4>Parents receive something they've never gotten before.</h4>
+      <p>A real, detailed update about their child. Their name. Specific feedback. Drills they can follow along with at home, with video guides so they actually know what they're looking at. The kind of communication that makes them feel like they picked the right gym.</p>
+    </div>
+  </div>
+
+  <p class="body-text" style="margin-top: 12px;">Here's a real report generated by CheerConnect after a session:</p>
+
+  <!-- ════════════════════════════ -->
+  <!-- 6. WHAT PARENTS RECEIVE     -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">This Is What a Parent Gets <em>After Practice</em></h2>
+
+  <p class="body-text">Not a "she did great!" text. Not a group message. Not nothing. This:</p>
+
+  <div class="email-demo">
+    <div class="email-demo-label">⚡ Actual CheerConnect report from a real session</div>
+    <div class="greeting">Hi Sarahi! 👋</div>
+    <p>We had a great session with Briella today, and I'm excited to share her progress with you.</p>
+    <div class="e-section">
+      <div class="e-section-title">🏆 The Win</div>
+      <p>Briella did an excellent job with her back handspring! Her enthusiasm and effort really shone through. She's making real strides in her tumbling skills.</p>
+    </div>
+    <div class="e-section">
+      <div class="e-section-title">🔧 What We're Working On</div>
+      <p>Briella needs to focus on "blocking through her shoulders" when she transitions into her handstand. Imagine the floor is hot and you're trying to push it away quickly.</p>
+    </div>
+    <div class="e-section">
+      <div class="e-section-title">🏠 Briella's At-Home Workout Plan</div>
+      <p class="e-meta">Focus: Back handspring & blocking · 15-30 min · No equipment needed</p>
+      <p class="e-drill"><strong>1. Wall Facing Handstand Holds</strong> — 3×30-60 sec<br><em>Coach's Tip: Imagine you're a straight pencil trying not to break!</em><br>📹 Watch: Wall Facing Handstand Holds</p>
+      <p class="e-drill"><strong>2. Handstand Shoulder Shrugs</strong> — 3×10 reps<br><em>Coach's Tip: Pretend you're trying to push the floor away — but you have no elbows!</em><br>📹 Watch: Handstand Shoulder Shrugs</p>
+      <p class="e-drill"><strong>3. Stretch Jumps</strong> — 3×5 reps<br><em>Coach's Tip: Imagine you're trying to swing and jump to reach a really high bar!</em><br>📹 Watch: Stretch Jumps</p>
+      <p class="e-drill"><strong>4. Core Crunches</strong> — 3×10 reps<br>📹 Watch: Core Crunches</p>
+      <p class="e-drill"><strong>5. Wall Sit</strong> — 3×30 sec<br>📹 Watch: Wall Sit</p>
+      <p class="e-drill"><strong>6. Stretching</strong> — 5-10 min<br>📹 Watch: Full Body Stretching Routine</p>
+    </div>
+    <div class="e-section">
+      <p style="font-size: 0.88rem;">We'd love to see Briella's progress at home! Feel free to send us videos of her working on these drills. We'll celebrate the wins together! 🎥</p>
+    </div>
+    <div class="e-booking">
+      📅 <a href="https://calendly.com/manuellarrabee/private">Book Your Next Session</a>&nbsp;&nbsp;·&nbsp;&nbsp;📸 Tag us @mannydoes when you share!
+    </div>
+    <div class="e-sig">— Coach Manny · <em>Powered by Cheer Connect</em></div>
+  </div>
+
+  <p class="body-text">That came from a 60-second voice note. No typing. No templates. No formatting. Just a coach talking about how practice went.</p>
+
+  <p class="body-text">Now ask yourself: has your child's soccer coach ever sent you something like this? Their dance instructor? Their piano teacher?</p>
+
+  <p class="body-text"><strong>No. They haven't.</strong> And that's exactly why this works.</p>
+
+  <!-- ════════════════════════════ -->
+  <!-- 7. HOW FAMILIES BENEFIT     -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">What This Changes for <em>Families</em></h2>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">📈</div>
+    <div class="benefit-text">
+      <h4>Athletes actually improve faster.</h4>
+      <p>A once-a-week athlete gets roughly 52 hours of training per year. And that's before closures, holidays, and sick days. That's not enough time to build serious skills alone. Structured at-home drills with video guides bridge that gap. Kids retain corrections between sessions instead of starting over every week.</p>
+    </div>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">👁️</div>
+    <div class="benefit-text">
+      <h4>Parents can finally see the coaching.</h4>
+      <p>They're not guessing what happened behind the glass. They know exactly what their child worked on, what improved, and what needs attention. The "what's a hollow body hold?" problem disappears because there's a video showing them exactly what it looks like.</p>
+    </div>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">🏠</div>
+    <div class="benefit-text">
+      <h4>Homework stops being a mystery.</h4>
+      <p>Every drill has reps, sets, coaching tips in language a kid can understand, and a video guide so parents can actually confirm their child is doing it right. No more "I don't even know if she's doing it correctly."</p>
+    </div>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">💜</div>
+    <div class="benefit-text">
+      <h4>Connection goes up. Retention follows.</h4>
+      <p>Parents who feel informed feel invested. Parents who feel invested are far less likely to quietly drift away after 6 months wondering if it's worth it. They see the work happening, in writing, every session. And that changes how they think about your program.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 8. THE HIDDEN GROWTH ENGINE -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">Every Email Is Also a <em>Business Tool</em></h2>
+
+  <p class="body-text">The progress report isn't just a nice touch. It's working for your business in the background.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">📅</div>
+    <div class="benefit-text">
+      <h4>More bookings.</h4>
+      <p>Every email includes a link to book the next session. Parents reading about their child's progress while they're feeling proud and connected? That's the highest-conversion moment you could ask for.</p>
+    </div>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">📱</div>
+    <div class="benefit-text">
+      <h4>Free content from parents.</h4>
+      <p>The email invites parents to share videos of their kid practicing at home and tag your gym. That's user-generated content for your social media. Created by parents who are excited, not because you asked them to "engage with your brand."</p>
+    </div>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">⭐</div>
+    <div class="benefit-text">
+      <h4>Reviews on autopilot. <span style="font-size: 0.8rem; color: var(--gold); font-weight: 700;">(Coming Soon)</span></h4>
+      <p>We're building a feature that includes a gentle review request link in the email, timed to when parents are feeling most positive about your program. More 5-star reviews without the awkward ask.</p>
+    </div>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-icon">🏆</div>
+    <div class="benefit-text">
+      <h4>Premium positioning.</h4>
+      <p>Every report that goes out is a quiet signal that your program operates at a different level than the gym down the street. You don't need to say you're the best. The communication says it for you.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 9. THE ACCOUNTABILITY ANGLE -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading">And If a Parent Says <em>"My Kid Isn't Improving"?</em></h2>
+
+  <p class="body-text">You'll have the documentation.</p>
+
+  <p class="body-text">Every session. Every correction. Every drill assigned. Every video sent. All of it saved in the athlete's history.</p>
+
+  <p class="body-text">If a family's child isn't progressing as fast as others, it's not because they weren't given the resources. It's not because the coaching wasn't there. <strong>Everything was documented and delivered.</strong> The corrections were explained. The homework was assigned. The video guides were sent.</p>
+
+  <p class="body-text">That protects your coaches. That protects your gym. And it shifts the conversation from "you're not doing enough" to "here's everything we've provided. Let's figure out what's next together."</p>
+
+  <p class="body-text">That's a conversation you can win. Every time.</p>
+
+  <!-- Mid-page CTA -->
+  <div class="cta-block">
+    <a href="#pricing" class="btn btn-gold">See Pricing →</a>
+    <p class="cta-sub">No contracts. Cancel anytime. 60-day guarantee.</p>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 10. PRICING                 -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <div id="pricing">
+    <h2 class="section-heading" style="margin-top: 0;">Simple Pricing. <em>Obvious ROI.</em></h2>
+
+    <p class="body-text">Most families pay $1,200–$4,000 per year in tuition. If CheerConnect helps you keep one extra family, it pays for itself. Everything after that is upside.</p>
+
+    <!-- Early Access Urgency Bar -->
+    <div class="urgency-bar">
+      <h4>🔒 Early Access Pricing — Limited Spots Remaining</h4>
+      <div class="urgency-row">
+        <span class="urgency-label">Program</span>
+        <div class="urgency-track"><div class="urgency-fill" style="width: 6%"></div></div>
+        <span class="urgency-count">94 of 100 left</span>
+      </div>
+      <div class="urgency-row">
+        <span class="urgency-label">Coach</span>
+        <div class="urgency-track"><div class="urgency-fill" style="width: 13%"></div></div>
+        <span class="urgency-count">87 of 100 left</span>
+      </div>
+    </div>
+
+    <!-- Program -->
+    <div class="pricing-card featured">
+      <div class="pricing-badge">Most Popular</div>
+      <div class="pricing-header">
+        <div class="pricing-name">Program</div>
+        <div class="pricing-price">$99<span>/mo</span></div>
+      </div>
+      <div class="early-access-tag">⚡ Early Access Price</div>
+      <p class="pricing-future">After first 100 programs: <s>$199/mo</s> · <strong>Lock this in forever.</strong></p>
+      <p class="pricing-desc">For gyms and programs that want every coach on the same professional standard.</p>
+      <ul class="pricing-list">
+        <li><strong>Up to 10 coaches</strong> on one account</li>
+        <li>Unlimited athletes</li>
+        <li>Voice-to-report AI for every coach</li>
+        <li>Video drill library: your content, organized</li>
+        <li>Team and class sending</li>
+        <li>Session history for every athlete</li>
+        <li>Your gym's name on every report</li>
+        <li>Staff accountability: see who's sending reports</li>
+      </ul>
+      <a href="https://app.cheerconnect.app" class="btn btn-gold">Start My Program →</a>
+    </div>
+
+    <!-- Coach -->
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="pricing-name">Coach</div>
+        <div class="pricing-price">$29<span>/mo</span></div>
+      </div>
+      <div class="early-access-tag">⚡ Early Access Price</div>
+      <p class="pricing-future">After first 100 coaches: <s>$49/mo</s> · <strong>Lock this in forever.</strong></p>
+      <p class="pricing-desc">For individual coaches and private lesson instructors.</p>
+      <ul class="pricing-list">
+        <li>Voice-to-report AI</li>
+        <li>50 athletes</li>
+        <li>Unlimited drill videos</li>
+        <li>Bulk team sending</li>
+        <li>Session history</li>
+        <li>Your coaching philosophy in every report</li>
+      </ul>
+      <a href="https://app.cheerconnect.app" class="btn btn-plum">Start Free →</a>
+    </div>
+
+    <!-- Done-For-You -->
+    <div class="addon-box">
+      <div class="addon-icon">🛠️</div>
+      <div>
+        <h4>Done-For-You Setup: <span class="addon-price">$249 one-time</span></h4>
+        <p>I'll personally import your full roster, invite your coaches, configure your teams, and set up your gym's profile so you're sending reports on day one. No learning curve. Just results.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 11. GUARANTEE               -->
+  <!-- ════════════════════════════ -->
+  <div class="guarantee-box">
+    <div class="g-icon">🛡️</div>
+    <div>
+      <h4>The "Parents Will Thank You" Guarantee</h4>
+      <p>Use CheerConnect for 60 days. If you don't receive at least <strong>5 messages from parents</strong> saying "thank you," "this is amazing," or anything along those lines, I'll refund every penny. No questions. No hoops. I'm that confident in what happens when parents finally see the coaching they've been paying for.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 12. FOUNDING 10             -->
+  <!-- ════════════════════════════ -->
+  <div class="founding-section">
+    <h2>For 10 Programs That Want to <em>Help Build This</em></h2>
+    <p class="founding-body">I'm opening 10 Founding Member spots for gym owners and program directors who want lifetime access, white-glove treatment, and a seat at the table as we build the platform our industry has been missing.</p>
+    <ul class="founding-list">
+      <li><strong>Lifetime access</strong>: every feature, every update, no monthly fees, forever</li>
+      <li><strong>Unlimited coaches</strong>: no 10-coach cap</li>
+      <li><strong>1-on-1 onboarding call</strong> with me: your entire program set up personally</li>
+      <li><strong>Done-for-you roster import</strong>: included (normally $249)</li>
+      <li><strong>Priority feature requests</strong>: you shape the roadmap</li>
+      <li><strong>Direct access</strong>: private channel, direct line to the founder</li>
+      <li><strong>Founding Member badge</strong> in-app</li>
+      <li><strong>60-day money-back guarantee</strong></li>
+    </ul>
+    <div class="founding-price">$997</div>
+    <div class="founding-compared">Instead of <s>$99/month ($1,188/year)</s>. Pay once, own it forever.</div>
+    <a href="https://app.cheerconnect.app" class="btn btn-gold">Claim My Founding Spot →</a>
+    <p style="font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-top: 16px;">Only 10 spots. When they're filled, this offer is gone permanently.</p>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 13. FAQ                     -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <h2 class="section-heading" style="margin-top: 0;">Quick Answers</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Will the emails sound like a robot wrote them?</div>
+    <div class="faq-a">No. You set your coaching philosophy and tone. The AI adapts to sound like your program. Warm, professional, parent-friendly. Parents will think the coach typed it themselves.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if my coaches aren't tech-savvy?</div>
+    <div class="faq-a">If they can leave a voice memo, they can use CheerConnect. You talk, the AI writes. Virtually no learning curve.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How do I know if my coaches are actually using it?</div>
+    <div class="faq-a">Your dashboard shows your PVR (Parent Visibility Rate): the percentage of your athletes who received a professional update that week. You'll know exactly who's sending reports and who isn't.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Does it work for rec AND competitive?</div>
+    <div class="faq-a">Yes. Organize athletes by team, age, skill level, or class type. Works for privates, small groups, rec classes, and full competitive programs.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How is this different from texting parents or using ChatGPT?</div>
+    <div class="faq-a">CheerConnect remembers every athlete's history, matches drills from your video library, tracks sessions over time, and formats everything professionally. It's a system, not a workaround.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if a parent doesn't have email?</div>
+    <div class="faq-a">Reports are sent to whatever email is on file. If a family prefers text, you can copy and share the report directly. We're exploring SMS delivery as a future feature.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What about the guarantee?</div>
+    <div class="faq-a">If you use CheerConnect for 60 days and don't receive at least 5 messages from parents saying something positive about the reports, full refund. Email me, get your money back. No forms, no calls, no guilt.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Can I try it before paying?</div>
+    <div class="faq-a">Yes. Start free with 3 athletes. See the quality of the reports for yourself, then decide.</div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- 14. FINAL CTA               -->
+  <!-- ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <div style="text-align: center; padding: 40px 0 20px;">
+    <p class="body-text" style="text-align: center; font-style: italic; color: var(--text); margin-bottom: 32px;">The coaching is already happening. This just makes sure parents finally see it.</p>
+    <h2 class="section-heading" style="margin: 0 0 16px; text-align: center;">Ready to Become the Program <em>Parents Talk About?</em></h2>
+    <p class="body-text" style="text-align: center; max-width: 480px; margin: 0 auto 32px;">No contracts. Cancel anytime. If parents don't thank you for it, you don't pay for it.</p>
+    <a href="https://app.cheerconnect.app" class="btn btn-gold" style="font-size: 1.1rem; padding: 20px 44px;">Start CheerConnect Free →</a>
+    <p style="font-size: 0.88rem; color: var(--text-light); margin-top: 24px;">Questions? Text me directly. I answer every message personally.<br><strong style="color: var(--text);">— Manny, Founder & Coach · 15 years on the mat</strong></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrapper">
+    <p style="font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--plum);">✦ Cheer Connect</p>
+    <p>Built by coaches, for coaches.</p>
+    <p><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/cdn-cgi/l/email-protection#7119141d1d1e311219141403121e1f1f1412055f100101">Contact</a> · <a href="https://instagram.com/mannydoes" target="_blank">Instagram
