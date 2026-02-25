@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — CheerConnect</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:#F7F4EF; --navy:#1C1B35; --navy-mid:#2D2B4E;
+    --purple:#6B3FA0; --gold:#C49A3C; --gold-light:#F5EDD6; --gold-border:#D4AA5A;
+    --white:#FFFFFF; --gray:#8A8799; --mid:#4A4864;
+    --border:rgba(28,27,53,0.1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--navy);font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;}
+
+  .card{max-width:520px;width:100%;text-align:center;opacity:0;transform:translateY(24px);animation:rise 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;}
+
+  .check-wrap{margin:0 auto 32px;width:72px;height:72px;}
+  .check-circle{width:72px;height:72px;border-radius:50%;background:var(--gold-light);border:2px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:28px;animation:pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.55s both;}
+
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px;}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:20px;height:1.5px;background:var(--gold);}
+
+  h1{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,38px);font-weight:700;line-height:1.2;color:var(--navy);margin-bottom:16px;letter-spacing:-0.3px;}
+  h1 em{font-style:italic;color:var(--purple);}
+  .name-highlight{color:var(--gold);}
+
+  .body-text{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:40px;}
+  .body-text strong{color:var(--navy);font-weight:600;}
+
+  .steps{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:28px 32px;margin-bottom:36px;text-align:left;box-shadow:0 2px 12px rgba(28,27,53,0.05);}
+  .steps-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+  .step{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px;}
+  .step:last-child{margin-bottom:0;}
+  .step-num{width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1.5px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--gold);flex-shrink:0;margin-top:1px;}
+  .step-text{font-size:14px;color:var(--mid);line-height:1.65;}
+  .step-text strong{color:var(--navy);font-weight:600;}
+
+  .back-link{font-size:13px;color:var(--gray);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;transition:color 0.2s;}
+  .back-link:hover{color:var(--navy);}
+
+  .logo-footer{font-size:12px;color:var(--gray);margin-top:48px;opacity:0.6;}
+
+  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  @keyframes pop{from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="check-wrap">
+    <div class="check-circle">✓</div>
+  </div>
+
+  <div class="eyebrow" id="eyebrow">Application received</div>
+
+  <h1 id="headline">You're in,<br><em>check your inbox.</em></h1>
+
+  <p class="body-text" id="bodyText">
+    Your application went straight to Manny. He reads every one personally.<br>
+    <strong>Your checkout link is on its way — usually within a few minutes.</strong>
+  </p>
+
+  <div class="steps" id="stepsBox">
+    <div class="steps-label">What happens next</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text" id="step1"><strong>Check your inbox</strong> — an email from Manny is on its way with your personalized checkout link and a note referencing something specific from your application.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text" id="step2"><strong>Complete checkout</strong> — your $99/month early access price locks in the moment you sign up. After the first 100 Program spots fill, this price goes to $199/month permanently.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text" id="step3"><strong>Get set up</strong> — your onboarding is personalized based on what you shared. Your one goal on day one: send a single report for a single athlete. That's it.</div>
+    </div>
+  </div>
+
+  <a href="https://cheerconnect.app" class="back-link">← Back to cheerconnect.app</a>
+  <p class="logo-footer">✦ CheerConnect · Built by coaches, for coaches.</p>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('name');
+  const tier = params.get('tier') || 'program';
+
+  // Personalize name in headline
+  if (name && name.length > 0 && name.length < 30) {
+    document.getElementById('headline').innerHTML =
+      `You\u2019re in, <span class="name-highlight">${name}</span>.<br><em>Check your inbox.</em>`;
+  }
+
+  // Tier-specific content
+  if (tier === 'coach') {
+    document.getElementById('step2').innerHTML = '<strong>Complete checkout</strong> \u2014 your $29/month early access price locks in the moment you sign up. Start free with 3 athletes, then upgrade when you\u2019re ready.';
+    document.getElementById('step3').innerHTML = '<strong>Get set up</strong> \u2014 your setup is personalized based on what you shared. Your one goal on day one: send a single update for a single athlete. That\u2019s it.';
+  } else if (tier === 'founding') {
+    document.getElementById('eyebrow').textContent = 'Founding Member Application Received';
+    document.getElementById('bodyText').innerHTML = 'Your Founding Member application went straight to Manny. He reads every one personally.<br><strong>Expect a personal response within a few hours \u2014 not a form email.</strong>';
+    document.getElementById('step1').innerHTML = '<strong>Manny reaches out personally</strong> \u2014 you\u2019ll get an email or text from Manny with your checkout link, onboarding details, and a time to schedule your 1-on-1 setup call.';
+    document.getElementById('step2').innerHTML = '<strong>Complete your $997 checkout</strong> \u2014 one payment. Lifetime access. Every feature, every update, unlimited coaches, no monthly fees, forever.';
+    document.getElementById('step3').innerHTML = '<strong>White-glove onboarding</strong> \u2014 Manny personally imports your roster, configures your teams, and sets up your entire program. You\u2019re sending reports before your next practice.';
+  }
+  // program tier uses the default HTML — no changes needed
+</script>
+</body>
+</html>
