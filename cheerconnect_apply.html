@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apply for CheerConnect — cheerconnect.app</title>
+<title>Apply for CheerConnect Program — cheerconnect.app</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -41,7 +41,7 @@
   .spots-text{font-size:13px;color:var(--mid);flex:1;}
   .spots-text strong{color:var(--navy);}
   .spots-track{width:100px;height:3px;background:rgba(196,154,60,0.2);border-radius:2px;overflow:hidden;flex-shrink:0;}
-  .spots-fill{height:100%;width:0%;background:var(--gold);border-radius:2px;transition:width 1.2s ease;}
+  .spots-fill{height:100%;width:6%;background:var(--gold);border-radius:2px;transition:width 1.2s ease;}
   .spots-price{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);white-space:nowrap;flex-shrink:0;}
   .spots-price small{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--gray);font-weight:400;}
   .form-wrap{opacity:0;animation:fadeUp 0.5s ease 0.35s forwards;}
@@ -88,9 +88,9 @@
   </nav>
 
   <div class="page-header">
-    <div class="eyebrow" id="eyebrow">Program Tier · Early Access</div>
-    <h1 id="headline">Before you get started,<br>tell us about<br><em>your program.</em></h1>
-    <p class="header-sub" id="headerSub">CheerConnect works best for programs that are <strong>serious about parent communication.</strong> Not perfect — serious. Three short questions help us personalize your onboarding so you're getting real results from day one.</p>
+    <div class="eyebrow">Program Tier · Early Access</div>
+    <h1>Before you get started,<br>tell us about<br><em>your program.</em></h1>
+    <p class="header-sub">CheerConnect works best for programs that are <strong>serious about parent communication.</strong> Not perfect — serious. Three short questions help us personalize your onboarding so you're getting real results from day one.</p>
   </div>
 
   <div class="gold-rule"></div>
@@ -103,10 +103,10 @@
     </div>
   </div>
 
-  <div class="spots-bar" id="spotsBar">
-    <div class="spots-text" id="spotsText">Early access: <strong>94 of 100 spots</strong> remaining</div>
+  <div class="spots-bar">
+    <div class="spots-text">Early access: <strong>94 of 100 spots</strong> remaining</div>
     <div class="spots-track"><div class="spots-fill" id="spotsFill"></div></div>
-    <div class="spots-price" id="spotsPrice">$99 <small>/mo · locked forever</small></div>
+    <div class="spots-price">$99 <small>/mo · locked forever</small></div>
   </div>
 
   <div class="form-wrap">
@@ -176,8 +176,8 @@
         <div class="char-counter" id="q4-counter">0 / 800</div>
       </div>
 
-      <div class="submit-context" id="submitContext">
-        After you submit, check your inbox. Manny reads every application and your checkout link arrives within a few minutes — along with a personal note.
+      <div class="submit-context">
+        After you submit, Manny will review your application and reach out personally within 24 hours.
       </div>
 
       <button type="submit" class="btn-submit" id="submitBtn">
@@ -197,57 +197,8 @@
 </div>
 
 <script>
-  // ── Tier configuration ──
-  const TIERS = {
-    coach: {
-      eyebrow: 'Coach Tier · Early Access',
-      headline: 'Before you get started,<br>tell us about<br><em>your coaching.</em>',
-      sub: 'CheerConnect works best for coaches who are <strong>serious about parent communication.</strong> Not perfect — serious. Three short questions help us personalize your setup so you\'re getting real results from day one.',
-      spotsText: 'Early access: <strong>Coach tier</strong> · Try free with 3 athletes',
-      spotsPrice: '$29 <small>/mo · locked forever</small>',
-      spotsFill: '6%',
-      submitContext: 'After you submit, check your inbox. Manny reads every application and your checkout link arrives within a few minutes — along with a personal note.',
-      tier: 'coach'
-    },
-    program: {
-      eyebrow: 'Program Tier · Early Access',
-      headline: 'Before you get started,<br>tell us about<br><em>your program.</em>',
-      sub: 'CheerConnect works best for programs that are <strong>serious about parent communication.</strong> Not perfect — serious. Three short questions help us personalize your onboarding so you\'re getting real results from day one.',
-      spotsText: 'Early access: <strong>94 of 100 spots</strong> remaining',
-      spotsPrice: '$99 <small>/mo · locked forever</small>',
-      spotsFill: '6%',
-      submitContext: 'After you submit, check your inbox. Manny reads every application and your checkout link arrives within a few minutes — along with a personal note.',
-      tier: 'program'
-    },
-    founding: {
-      eyebrow: 'Founding Member · 10 Spots Only',
-      headline: 'You\'re applying for a<br><em>Founding Member</em> spot.',
-      sub: 'This is lifetime access — every feature, every update, no monthly fees, forever. Plus 1-on-1 onboarding, done-for-you setup, and a direct line to the founder. <strong>Only 10 spots exist.</strong>',
-      spotsText: 'Founding Members: <strong>10 spots total</strong>',
-      spotsPrice: '$997 <small>one-time · lifetime</small>',
-      spotsFill: '0%',
-      submitContext: 'After you submit, Manny will reach out personally with your checkout link, onboarding details, and next steps. Founding Members get white-glove treatment from day one.',
-      tier: 'founding'
-    }
-  };
+  setTimeout(() => { document.getElementById('spotsFill').style.width = '6%'; }, 500);
 
-  // Read tier from URL
-  const params = new URLSearchParams(window.location.search);
-  const tierKey = params.get('tier') || 'program';
-  const tier = TIERS[tierKey] || TIERS.program;
-
-  // Apply tier to page
-  document.getElementById('eyebrow').innerHTML = tier.eyebrow;
-  document.getElementById('headline').innerHTML = tier.headline;
-  document.getElementById('headerSub').innerHTML = tier.sub;
-  document.getElementById('spotsText').innerHTML = tier.spotsText;
-  document.getElementById('spotsPrice').innerHTML = tier.spotsPrice;
-  document.getElementById('submitContext').textContent = tier.submitContext;
-  document.title = (tierKey === 'founding' ? 'Apply — Founding Member' : tierKey === 'coach' ? 'Apply — Coach Tier' : 'Apply — Program Tier') + ' · CheerConnect';
-
-  setTimeout(() => { document.getElementById('spotsFill').style.width = tier.spotsFill; }, 500);
-
-  // Character counters
   ['q1','q2','q3'].forEach(id => {
     const ta = document.getElementById(id);
     const counter = document.getElementById(id+'-counter');
@@ -261,7 +212,6 @@
   const c4 = document.getElementById('q4-counter');
   q4.addEventListener('input', () => { c4.textContent = q4.value.length + ' / 800'; c4.classList.toggle('warn', q4.value.length > 680); });
 
-  // Validation
   function validate() {
     let valid = true;
     [['name','field-name',v=>v.trim().length>0],['email','field-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)],['gym','field-gym',v=>v.trim().length>0],['q1','field-q1',v=>v.trim().length>20],['q2','field-q2',v=>v.trim().length>20],['q3','field-q3',v=>v.trim().length>20]].forEach(([id,fid,fn]) => {
@@ -277,7 +227,6 @@
     el.addEventListener('input', () => { const w = el.closest('.field'); if(w) w.classList.remove('error'); });
   });
 
-  // Submit
   document.getElementById('applyForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     if (!validate()) { const f = document.querySelector('.field.error'); if(f) f.scrollIntoView({behavior:'smooth',block:'center'}); return; }
@@ -294,12 +243,14 @@
       q3: document.getElementById('q3').value.trim(),
       q4: document.getElementById('q4').value.trim(),
       submitted_at: new Date().toISOString(),
-      tier: tier.tier
+      tier: 'program'
     };
-    // WIRE WEBHOOK HERE:
-    // await fetch('YOUR_GHL_OR_ZAPIER_WEBHOOK', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
-    await new Promise(r => setTimeout(r, 1400));
-    window.location.href = 'cheerconnect_confirmation.html?name=' + encodeURIComponent(data.name.split(' ')[0]) + '&tier=' + encodeURIComponent(tier.tier);
+    // Send to Make.com webhook
+    try {
+      await fetch('https://hook.us2.make.com/5no94m749x1kcabt3ysepzh33tpjo103', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+    } catch(e) { console.error('Webhook error:', e); }
+    await new Promise(r => setTimeout(r, 800));
+    window.location.href = 'cheerconnect_confirmation.html?name=' + encodeURIComponent(data.name.split(' ')[0]);
   });
 </script>
 </body>
