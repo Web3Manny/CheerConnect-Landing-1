@@ -11,6 +11,7 @@
     --purple:#6B3FA0; --gold:#C49A3C; --gold-light:#F5EDD6; --gold-border:#D4AA5A;
     --white:#FFFFFF; --gray:#8A8799; --mid:#4A4864;
     --border:rgba(28,27,53,0.1);
+    --plum:#4A1942; --plum-light:#6B2D5B;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--cream);color:var(--navy);font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;}
@@ -27,16 +28,27 @@
   h1 em{font-style:italic;color:var(--purple);}
   .name-highlight{color:var(--gold);}
 
-  .body-text{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:40px;}
+  .body-text{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:32px;}
   .body-text strong{color:var(--navy);font-weight:600;}
 
-  .steps{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:28px 32px;margin-bottom:36px;text-align:left;box-shadow:0 2px 12px rgba(28,27,53,0.05);}
+  .cta-group{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all 0.25s;letter-spacing:0.2px;}
+  .btn-primary{background:var(--plum);color:var(--white);box-shadow:0 4px 16px rgba(74,25,66,0.25);}
+  .btn-primary:hover{background:var(--plum-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,25,66,0.3);}
+  .btn-secondary{background:var(--white);color:var(--navy);border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(28,27,53,0.06);}
+  .btn-secondary:hover{border-color:var(--gold-border);transform:translateY(-1px);}
+
+  .steps{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:28px 32px;margin-bottom:32px;text-align:left;box-shadow:0 2px 12px rgba(28,27,53,0.05);}
   .steps-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
   .step{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px;}
   .step:last-child{margin-bottom:0;}
   .step-num{width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1.5px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--gold);flex-shrink:0;margin-top:1px;}
   .step-text{font-size:14px;color:var(--mid);line-height:1.65;}
   .step-text strong{color:var(--navy);font-weight:600;}
+
+  .personal-note{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold-border);border-radius:4px;padding:20px 24px;margin-bottom:32px;text-align:left;font-size:14px;color:var(--mid);line-height:1.7;box-shadow:0 2px 8px rgba(28,27,53,0.04);}
+  .personal-note strong{color:var(--navy);}
+  .personal-note .sig{font-size:12px;color:var(--gray);margin-top:12px;font-weight:500;}
 
   .back-link{font-size:13px;color:var(--gray);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;transition:color 0.2s;}
   .back-link:hover{color:var(--navy);}
@@ -53,29 +65,39 @@
     <div class="check-circle">✓</div>
   </div>
 
-  <div class="eyebrow" id="eyebrow">Application received</div>
+  <div class="eyebrow">Application received</div>
 
-  <h1 id="headline">You're in,<br><em>check your inbox.</em></h1>
+  <h1 id="headline">You're in,<br><em>we got your application.</em></h1>
 
-  <p class="body-text" id="bodyText">
-    Your application went straight to Manny. He reads every one personally.<br>
-    <strong>Your checkout link is on its way — usually within a few minutes.</strong>
+  <p class="body-text">
+    I personally review every application and will reach out within 24 hours.<br>
+    <strong>But if you're ready to go right now, you don't have to wait.</strong>
   </p>
 
-  <div class="steps" id="stepsBox">
+  <div class="cta-group">
+    <a href="https://app.cheerconnect.app" target="_blank" class="btn btn-primary">Start Your Free Trial →</a>
+    <a href="https://calendly.com/manuellarrabee/cheerconnect-demo" target="_blank" class="btn btn-secondary">Book a Demo with Manny</a>
+  </div>
+
+  <div class="steps">
     <div class="steps-label">What happens next</div>
     <div class="step">
       <div class="step-num">1</div>
-      <div class="step-text" id="step1"><strong>Check your inbox</strong> — an email from Manny is on its way with your personalized checkout link and a note referencing something specific from your application.</div>
+      <div class="step-text"><strong>Start free right now</strong> — create your account and send your first report to 3 athletes. No credit card required.</div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-text" id="step2"><strong>Complete checkout</strong> — your $99/month early access price locks in the moment you sign up. After the first 100 Program spots fill, this price goes to $199/month permanently.</div>
+      <div class="step-text"><strong>I'll reach out personally</strong> — I review every application and will follow up within 24 hours to answer any questions and help you get set up.</div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-text" id="step3"><strong>Get set up</strong> — your onboarding is personalized based on what you shared. Your one goal on day one: send a single report for a single athlete. That's it.</div>
+      <div class="step-text"><strong>Or book a live demo</strong> — if you'd rather see it in action first, grab a 15-minute slot on my calendar. I'll walk you through a real session.</div>
     </div>
+  </div>
+
+  <div class="personal-note">
+    <strong>Quick note:</strong> I'm a full-time coach just like you, so I might be on the mat when your application comes in. But I read every single one and I will get back to you. If you need me faster, DM me on Instagram <a href="https://instagram.com/mannydoes" target="_blank" style="color: var(--purple); text-decoration: none; font-weight: 600;">@mannydoes</a>.
+    <div class="sig">— Manny, Founder & Coach</div>
   </div>
 
   <a href="https://cheerconnect.app" class="back-link">← Back to cheerconnect.app</a>
@@ -85,26 +107,10 @@
 <script>
   const params = new URLSearchParams(window.location.search);
   const name = params.get('name');
-  const tier = params.get('tier') || 'program';
-
-  // Personalize name in headline
   if (name && name.length > 0 && name.length < 30) {
     document.getElementById('headline').innerHTML =
-      `You\u2019re in, <span class="name-highlight">${name}</span>.<br><em>Check your inbox.</em>`;
+      `You&#8217;re in, <span class="name-highlight">${name}</span>.<br><em>We got your application.</em>`;
   }
-
-  // Tier-specific content
-  if (tier === 'coach') {
-    document.getElementById('step2').innerHTML = '<strong>Complete checkout</strong> \u2014 your $29/month early access price locks in the moment you sign up. Start free with 3 athletes, then upgrade when you\u2019re ready.';
-    document.getElementById('step3').innerHTML = '<strong>Get set up</strong> \u2014 your setup is personalized based on what you shared. Your one goal on day one: send a single update for a single athlete. That\u2019s it.';
-  } else if (tier === 'founding') {
-    document.getElementById('eyebrow').textContent = 'Founding Member Application Received';
-    document.getElementById('bodyText').innerHTML = 'Your Founding Member application went straight to Manny. He reads every one personally.<br><strong>Expect a personal response within a few hours \u2014 not a form email.</strong>';
-    document.getElementById('step1').innerHTML = '<strong>Manny reaches out personally</strong> \u2014 you\u2019ll get an email or text from Manny with your checkout link, onboarding details, and a time to schedule your 1-on-1 setup call.';
-    document.getElementById('step2').innerHTML = '<strong>Complete your $997 checkout</strong> \u2014 one payment. Lifetime access. Every feature, every update, unlimited coaches, no monthly fees, forever.';
-    document.getElementById('step3').innerHTML = '<strong>White-glove onboarding</strong> \u2014 Manny personally imports your roster, configures your teams, and sets up your entire program. You\u2019re sending reports before your next practice.';
-  }
-  // program tier uses the default HTML — no changes needed
 </script>
 </body>
 </html>
