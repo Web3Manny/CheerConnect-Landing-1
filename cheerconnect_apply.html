@@ -115,19 +115,19 @@
       <div class="field-row">
         <div class="field" id="field-name">
           <label for="name">Your name</label>
-          <input type="text" id="name" name="name" placeholder="Coach Sarah" autocomplete="name">
+          <input type="text" id="name" name="name" placeholder="" autocomplete="name">
           <div class="field-error-msg">Please enter your name.</div>
         </div>
         <div class="field" id="field-email">
           <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="sarah@apexcheer.com" autocomplete="email">
+          <input type="email" id="email" name="email" placeholder="" autocomplete="email">
           <div class="field-error-msg">Please enter a valid email.</div>
         </div>
       </div>
 
       <div class="field" id="field-gym">
         <label for="gym">Gym or program name</label>
-        <input type="text" id="gym" name="gym" placeholder="Apex Cheer Athletics">
+        <input type="text" id="gym" name="gym" placeholder="">
         <div class="field-error-msg">Please enter your gym name.</div>
       </div>
 
@@ -136,10 +136,10 @@
       <div class="field" id="field-q1">
         <div class="field-header">
           <span class="q-num">01</span>
-          <label for="q1">How many athletes are you currently working with — and how are you communicating their progress to parents right now?</label>
+          <label for="q1">How many coaches do you have and how do you currently communicate with parents?</label>
         </div>
         <p class="field-hint">"I'm not really doing it consistently" is a perfectly valid answer. Probably why you're here.</p>
-        <textarea id="q1" name="q1" maxlength="600" placeholder="e.g. About 45 athletes across 4 teams. Coaches send a text after privates but nothing consistent goes out for group classes. Parents ask a lot of questions at pickup..."></textarea>
+        <textarea id="q1" name="q1" maxlength="600" placeholder=""></textarea>
         <div class="char-counter" id="q1-counter">0 / 600</div>
         <div class="field-error-msg">Please answer this question — it helps us set you up properly.</div>
       </div>
@@ -147,10 +147,9 @@
       <div class="field" id="field-q2">
         <div class="field-header">
           <span class="q-num">02</span>
-          <label for="q2">What's the biggest reason a parent has ever questioned the value of your program — or left without telling you why?</label>
+          <label for="q2">What is your biggest pain point you hope CheerConnect can solve?</label>
         </div>
-        <p class="field-hint">The answer usually has something to do with communication — even when it doesn't seem like it at first.</p>
-        <textarea id="q2" name="q2" maxlength="600" placeholder="e.g. A family left after 8 months and I found out later they felt like they had no idea what their daughter was actually working on. The coaching was great — they just couldn't see it..."></textarea>
+        <textarea id="q2" name="q2" maxlength="600" placeholder=""></textarea>
         <div class="char-counter" id="q2-counter">0 / 600</div>
         <div class="field-error-msg">Please answer this question — it shapes how we approach your onboarding.</div>
       </div>
@@ -161,7 +160,7 @@
           <label for="q3">What would have to be true about CheerConnect for it to be worth every penny six months from now?</label>
         </div>
         <p class="field-hint">Define success in your own words. This becomes your personal benchmark and how we measure whether we've done our job.</p>
-        <textarea id="q3" name="q3" maxlength="600" placeholder="e.g. Parents are engaged, retention is up, my coaches are using it consistently, and I have documentation if I ever need it..."></textarea>
+        <textarea id="q3" name="q3" maxlength="600" placeholder=""></textarea>
         <div class="char-counter" id="q3-counter">0 / 600</div>
         <div class="field-error-msg">Please answer this question — it becomes your success benchmark.</div>
       </div>
@@ -172,7 +171,7 @@
           <label for="q4">Anything else you want me to know about your program? <span class="optional">Optional</span></label>
         </div>
         <p class="field-hint">Staff size, competition level, specific challenges. Some of the most useful context comes from this field.</p>
-        <textarea id="q4" name="q4" maxlength="800" placeholder="e.g. We run rec and competitive under the same roof. My biggest challenge is getting 6 part-time coaches to buy into a new system..."></textarea>
+        <textarea id="q4" name="q4" maxlength="800" placeholder="e.g. We run rec and competitive cheer under the same roof."></textarea>
         <div class="char-counter" id="q4-counter">0 / 800</div>
       </div>
 
@@ -250,7 +249,7 @@
       await fetch('https://hook.us2.make.com/5no94m749x1kcabt3ysepzh33tpjo103', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
     } catch(e) { console.error('Webhook error:', e); }
     await new Promise(r => setTimeout(r, 800));
-    window.location.href = 'cheerconnect_confirmation.html?name=' + encodeURIComponent(data.name.split(' ')[0]);
+    window.location.href = 'confirmation.html?name=' + encodeURIComponent(data.name.split(' ')[0]);
   });
 </script>
 </body>
